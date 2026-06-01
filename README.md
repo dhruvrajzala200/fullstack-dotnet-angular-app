@@ -4,7 +4,7 @@
 
 # Clean Architecture AuthApi
 
-[![.NET Build and Test](https://github.com/Gramli/AuthApi/actions/workflows/dotnet.yml/badge.svg)](https://github.com/Gramli/AuthApi/actions/workflows/dotnet.yml)
+
 [![Angular Build](https://github.com/Gramli/AuthApi/actions/workflows/angular.yml/badge.svg)](https://github.com/Gramli/AuthApi/actions/workflows/angular.yml)
 ![.NET](https://img.shields.io/badge/.NET-10-512BD4?style=flat-square&logo=dotnet)
 ![Angular](https://img.shields.io/badge/Angular-21-DD0031?style=flat-square&logo=angular)
