@@ -1,0 +1,59 @@
+@hostname=localhost
+@port=7190
+@host={{hostname}}:{{port}}
+
+### Register request
+POST https://{{host}}/v1/auth/register
+Content-Type: application/json
+
+{
+  "username": "string",
+  "password": "string",
+  "email": "something@som.com"
+}
+
+### Login request
+POST https://{{host}}/v1/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin"
+}
+
+### Generate Token in login request and put it to Authorization header like this:
+### Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluaXN0cmF0b3IiLCJuYmYiOjE3MDAwNzgzODUsImV4cCI6MTcwMDA3OTU4NSwiaWF0IjoxNzAwMDc4Mzg1fQ.stURuZ1faZ6zvGHkrjgxY71le9IkGcNHTv5-PgFe5jw
+
+### Change Role request
+POST https://{{host}}/v1/users/<id>/role
+Content-Type: application/json
+Authorization: Bearer <generated token>
+
+{
+  "username": "string",
+  "roleName": "developer"
+}
+
+### Users Info
+
+GET https://{{host}}/v1/users
+Content-Type: application/json
+Authorization: Bearer <generated token>
+
+### User Info
+
+GET https://{{host}}/v1/auth/user
+Content-Type: application/json
+Authorization: Bearer <generated token>
+
+### Service Info
+
+GET https://{{host}}/v1/service/info
+Content-Type: application/json
+Authorization: Bearer <generated token>
+
+### Service Info Basic
+
+GET https://{{host}}/v1/service/info-basic
+Content-Type: application/json
+Authorization: Basic YWRtaW46YWRtaW4=
